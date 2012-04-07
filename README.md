@@ -12,6 +12,7 @@ Aside from elasticsearch running someplace, there isn't much setup.
 Put es.el into your load-path someplace and (require 'es).
 
 There are some variables that you can set (either setq or in a let form):
+
 * es-pretty-print-response - add pretty=true to requests. 
   Defaults to t
 * es-curl-program - full path to the curl program.  
@@ -23,13 +24,13 @@ There are some variables that you can set (either setq or in a let form):
 
 ## Examples
 
-```elisp
+```el
 (let ((es-host "my.es.server")
       (es-port 19200))
   (es-query "*:*"
             '((fields . ["size" "id"]))))
 ```
 
-```elisp
+```el
 (es-cluster-health) ;; default host and port is localhost:9200
 ```
